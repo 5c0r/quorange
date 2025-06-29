@@ -22,8 +22,8 @@ export class LoginPagePOM {
 
     expectSuccessLogin() {
         return this.page.waitForResponse(async (response: Response) => {
-            return response.url() === "https://opensource-demo.orangehrmlive.com/web/index.php/auth/validate"
-                && (await response.headerValue("Location")) === "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
+            return response.url() === `${process.env.APP_URL}/web/index.php/auth/validate`
+                && (await response.headerValue("Location")) === `${process.env.APP_URL}/web/index.php/dashboard/index`;
         });
     }
 
@@ -35,8 +35,8 @@ export class LoginPagePOM {
 
     expectFailureLoginFromWrongCredentials() {
         return this.page.waitForResponse(async (response: Response) => {
-            return response.url() === "https://opensource-demo.orangehrmlive.com/web/index.php/auth/validate"
-                && (await response.headerValue("Location")) === "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+            return response.url() === `${process.env.APP_URL}/web/index.php/auth/validate`
+                && (await response.headerValue("Location")) === `${process.env.APP_URL}/web/index.php/auth/login`;
         });
     }
 }

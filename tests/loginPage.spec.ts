@@ -32,7 +32,7 @@ test.describe("Login Page Test", () => {
 
         await page.waitForURL((url: URL) => url.href.endsWith("/dashboard/index"));
 
-        expect(page.url()).toBe("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
+        expect(page.url()).toBe(`${process.env.APP_URL}/web/index.php/dashboard/index`);
     });
 
     [
@@ -45,7 +45,7 @@ test.describe("Login Page Test", () => {
 
             await loginPage.expectFailureLoginFromFormValidation();
 
-            expect(page.url()).toBe("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+            expect(page.url()).toBe(`${process.env.APP_URL}/web/index.php/auth/login`);
         });
     });
 
@@ -60,7 +60,7 @@ test.describe("Login Page Test", () => {
                 loginPage.expectFailureLoginFromWrongCredentials()
             ])
 
-            expect(page.url()).toBe("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+            expect(page.url()).toBe(`${process.env.APP_URL}web/index.php/auth/login`);
         });
     });
 })
