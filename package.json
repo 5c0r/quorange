@@ -1,0 +1,22 @@
+{
+  "name": "quorange",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/5c0r/quorange.git",
+  "author": "Tri Nguyen <treenguyen94@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.4",
+    "artillery": "^2.0.23"
+  },
+  "scripts": {
+    "perf:test": "artillery run tests/loginPage.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0"
+  },
+  "resolutions": {
+    "@playwright/test": "^1.53.1"
+  }
+}
